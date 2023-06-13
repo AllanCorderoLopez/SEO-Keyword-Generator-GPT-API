@@ -4,7 +4,7 @@ const openaiAPI = axios.create({
   baseURL: 'https://api.openai.com/v1',
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': `Bearer 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` //TODO usar .env
+    'Authorization': `Bearer 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` //TODO 
   }
 });
 
@@ -13,7 +13,7 @@ const openaiAPI = axios.create({
     const response = await openaiAPI.post('/engines/text-davinci-003/completions', {
       prompt,
       temperature: 0.5,
-      max_tokens: 512,
+      max_tokens: 256,
       top_p: 1.0,
       frequency_penalty: 0.8,
       presence_penalty: 0.0
