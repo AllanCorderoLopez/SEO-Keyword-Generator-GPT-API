@@ -15,15 +15,17 @@ export interface initialInput
 
 
 export const getMiddleKeywords = (initialInputs: initialInput) => {//todo create interface 
-  return "this is middle keywords " + initialInputs.mainTopic ; //todo PROMPT PARA CREAR LAS MIDDLEKEYWORDS
+  return "genere una lista de  " + initialInputs.amountOfKeywords + " frases relacionadas con el siguiente tema:  " + 
+  initialInputs.mainTopic + ". Que no incluyan ninguna de las siguientes palabras: " + initialInputs.badWords + 
+  ". Y que vayan relacionadas con esta intencion: " + initialInputs.intentions;//todo PROMPT PARA CREAR LAS MIDDLEKEYWORDS
 }
 
 const getInitialSuggestions = () => {
-  return "this is initial suggestions "; //todo PROMPT PARA CREAR LAS INITIAL SUGGESTIONS
+  return "genere una lista de solo 15 palabras mas cotidianas y comunes que sirvan como base para un tema pricipal para el uso de posicionamiento web"; //todo PROMPT PARA CREAR LAS INITIAL SUGGESTIONS
 }
 
 const getFinalPrompt = (keywords: string[]) => {
-  return "This is the final prompt";
+  return "This is the final prompt" + keywords;
 };
 
 const getInitialPrompt = () => {
@@ -31,8 +33,18 @@ const getInitialPrompt = () => {
 }
 
 const getIncrementKeyword = (keywords: string[]) => {
-  return "This is the increment keyword";
+  return "Incremente el texto de las siguientes frases: " + keywords;
 }
+
+const getInitialBadWordsPrompt = (initialInputs: initialInput) => {
+  return "genere una lista de solo "+ (initialInputs.amountOfKeywords) +" palabras a evitar relacionadas con el siguiente tema: " + initialInputs.mainTopic
+}
+
+const getInitialIntentions = (initialInputs: initialInput) => {
+  return "genere una lista de 10 intenciones a manera de frase relacionadas en la siguiente palabra: "+ initialInputs.mainTopic
+}
+
+
 
 
 
