@@ -67,6 +67,13 @@ interface keywordContextType {
   setSelectedKeywords: (id: number) => void;
   deleteKeyword: (id: number) => void;
   initialKeywords: keywordSEO[]; // Include the property here
+  topicSelected: string;
+  setTopicSelected: React.Dispatch<React.SetStateAction<string>>;
+  mainTopic: string;
+  setMainTopic: React.Dispatch<React.SetStateAction<string>>;
+  isTopicsGenerated: boolean;
+  setIsTopicsGenerated: React.Dispatch<React.SetStateAction<boolean>>;
+
 
 }
 
@@ -78,7 +85,13 @@ export const KeywordContext = createContext<keywordContextType>({
   setInitialKeywords: () => {},
   setSelectedKeywords: () => {},
   deleteKeyword: () => {},
-  initialKeywords: [], // Include the property here
+  initialKeywords: [],
+  topicSelected: "",
+  setTopicSelected: () => {},
+  mainTopic: "",
+  setMainTopic: () => {},
+  isTopicsGenerated: false,
+  setIsTopicsGenerated: () => {},
 });
 
 export interface CustomContextProviderProps {
@@ -94,6 +107,10 @@ const KeywordContextProvider: React.FC<CustomContextProviderProps> = ({
     keyword: "",
     id: 0,
   });
+  const [mainTopic, setMainTopic] = useState<string>("");
+
+  const [topicSelected, setTopicSelected] = useState<string>("");
+  const [isTopicsGenerated, setIsTopicsGenerated] = useState<boolean>(false);
 
   const setKeyword = (id: number) => {
     if (id === 0) {
@@ -123,13 +140,19 @@ const KeywordContextProvider: React.FC<CustomContextProviderProps> = ({
         setSelectedKeywords: setKeyword,
         deleteKeyword,
         initialKeywords,
+        topicSelected,
+        setTopicSelected,
+        mainTopic,
+        setMainTopic,
+        isTopicsGenerated,
+        setIsTopicsGenerated,
+
       }}
     >
       {children}
     </KeywordContext.Provider>
   );
 };
-
 export const useKeywordContext = () => useContext(KeywordContext);
-
 export default KeywordContextProvider;
+ 
