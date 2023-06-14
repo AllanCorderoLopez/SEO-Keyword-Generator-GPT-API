@@ -1,22 +1,136 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&display=swap");
 
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", system-ui;
 }
-*{
-}
-
-
-
-.app-container{
-    padding-left: 20%;
-    padding-right: 20%;
-    background-color:#ffffff;
-    border: 2px solid #6559a4;
-    border-radius: 15px;
-    height: 81vh;
+* {
 }
 
+.app-container {
+  background-color: #ffffff;
+  height: 86vh;
+}
+.steps-container {
+  width: 135%;
+}
+.img {
+  width: 100%;
+  height: 110%;
+  object-fit: cover;
+}
+
+.h1-color-suggestion {
+  color: #4c35de;
+}
+
+.h1-color-suggestion:hover {
+  color: #8679da;
+}
+
+.btn-suggestions-topic {
+  background-color: #4c35de;
+}
+.btn-suggestions-bad {
+  background-color: #6655d6;
+  width: auto;
+}
+
+.btn-suggestions-bad-clicked {
+  background-color: #4c35de;
+  width: auto;
+}
+
+.btn-suggestions-bad:hover {
+  background-color: #897fca;
+}
+.btn-suggestions-topic:hover {
+  background-color: #8679da;
+}
+.btn-next-step {
+  background-color: #4c35de;
+}
+
+.btn-prev-step {
+  background-color: #8679da;
+}
+
+.btn-prev-step:hover {
+  background-color: #8679da;
+  background-color: #8679da;
+  box-shadow: 0px 15px 20px #8679da;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.stepper > .step::after {
+  background-color: #000000; /* Color de la línea divisoria entre los pasos */
+  bottom: 0;
+}
+
+.stepper.active {
+  background-color: #4c35de;
+  color: #fff;
+}
+
+.stepper.inactive {
+  background-color: #8679da; /* Color de fondo cuando el paso está inactivo */
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+  }
+}
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-top {
+  animation-name: slide-top;
+  animation-duration: 0.3s;
+}
+
+.step-container {
+  width: 45vw;
+  height: 45vh;
+}
+
+.pill-container {
+  width: auto;
+}
+
+.container-pills-bad {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-auto-rows: min-content; /* Ajusta la altura de las filas automáticamente según el contenido */
+  justify-items: center; /* Centra los elementos horizontalmente dentro de las celdas */
+  align-items: center; /* Centra los elementos verticalmente dentro de las celdas */
+}
