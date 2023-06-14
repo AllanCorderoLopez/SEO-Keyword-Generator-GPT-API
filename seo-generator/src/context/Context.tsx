@@ -16,6 +16,10 @@ export interface phraseInterest{
   phrase: string;
 }
 
+export interface ArrayOfPhrases{
+arrayOfPhrases: phraseInterest[];
+}
+
 export const getMiddleKeywords = (initialInputs: initialInput) => {
   //todo create interface
   return (
@@ -26,7 +30,7 @@ export const getMiddleKeywords = (initialInputs: initialInput) => {
     ". Que no incluyan ninguna de las siguientes palabras: " +
     initialInputs.badWords +
     ". Y que vayan relacionadas con esta intencion: " +
-    initialInputs.intentions + ". Ademas al final de cada frase debe terminar con este simbolo .#"
+    initialInputs.intentions + ". Las frases no deben llevar comillas de ningun tipo. Ademas al final de cada frase debe terminar con este simbolo .# "
   ); //todo PROMPT PARA CREAR LAS MIDDLEKEYWORDS
 };
 
