@@ -10,20 +10,23 @@ export interface initialInput {
   intentions: string[];
   amountOfKeywords: number;
   initialKeywords: keywordSEO[]; // Add the property here
-
+}
+export interface phraseInterest{
+  id: number;
+  phrase: string;
 }
 
 export const getMiddleKeywords = (initialInputs: initialInput) => {
   //todo create interface
   return (
-    "genere una lista de  " +
+    "genere una cantidad de " +
     initialInputs.amountOfKeywords +
-    " frases relacionadas con el siguiente tema:  " +
+    " frases seguidas una de otra sin nunguna numeracion por frase, que esten relacionadas con el siguiente tema:  " +
     initialInputs.mainTopic +
     ". Que no incluyan ninguna de las siguientes palabras: " +
     initialInputs.badWords +
     ". Y que vayan relacionadas con esta intencion: " +
-    initialInputs.intentions
+    initialInputs.intentions + ". Ademas al final de cada frase debe terminar con este simbolo .# "
   ); //todo PROMPT PARA CREAR LAS MIDDLEKEYWORDS
 };
 
@@ -39,8 +42,8 @@ const getInitialPrompt = () => {
   return "This is the initial prompt: ";
 };
 
-const getIncrementKeyword = (keywords: string[]) => {
-  return "Incremente el texto de las siguientes frases: " + keywords;
+export const getIncrementKeyword = (phrase: phraseInterest) => {
+  return "Incremente el texto de las siguiente frase: " + phrase.phrase;
 };
 
 const getInitialBadWordsPrompt = (initialInputs: initialInput) => {
