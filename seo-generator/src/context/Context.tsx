@@ -21,12 +21,12 @@ export const getMiddleKeywords = (initialInputs: initialInput) => {
   return (
     "genere una cantidad de " +
     initialInputs.amountOfKeywords +
-    " frases seguidas una de otra sin nunguna numeracion por frase, que esten relacionadas con el siguiente tema:  " +
+    " diferentes frases seguidas una de otra sin nunguna numeracion por frase, que esten relacionadas con el siguiente tema:  " +
     initialInputs.mainTopic +
     ". Que no incluyan ninguna de las siguientes palabras: " +
     initialInputs.badWords +
     ". Y que vayan relacionadas con esta intencion: " +
-    initialInputs.intentions + ". Ademas al final de cada frase debe terminar con este simbolo .# "
+    initialInputs.intentions + ". Ademas al final de cada frase debe terminar con este simbolo .#"
   ); //todo PROMPT PARA CREAR LAS MIDDLEKEYWORDS
 };
 
@@ -42,9 +42,10 @@ const getInitialPrompt = () => {
   return "This is the initial prompt: ";
 };
 
-export const getIncrementKeyword = (phrase: phraseInterest) => {
-  return "Incremente el texto de las siguiente frase: " + phrase.phrase;
+export const getIncrementPhrase = (phrase: phraseInterest) => {
+  return "Tome como base la frase que se esta proporcionado y amplie ligeramente su contenido, no puede utilizar mas de 10 palabras para ampliar la siguiente frase: " + phrase.phrase;
 };
+
 
 const getInitialBadWordsPrompt = (initialInputs: initialInput) => {
   return (
