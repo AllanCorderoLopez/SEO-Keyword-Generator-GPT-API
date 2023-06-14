@@ -1,23 +1,24 @@
 import { keywordSEO, useKeywordContext } from "@/context/Context";
 import React, { useEffect, useState } from "react";
-import GetInitialSuggestions from "./GetInitialSuggestions";
 import fetchCompletion from "@/api/GPTAPI";
 import { getInitialSuggestionsPromtp } from "@/Promtps/PromtsGPT";
 
 function Pillsbadge() {
   const { initialKeywords, setMainTopic, mainTopic } = useKeywordContext();
+
   const handleSetTopic = (keyword: string) => () => {
     setMainTopic(keyword);
   };
+
   const handleFieldChange = (fieldName: string, value: string) => {
     setMainTopic(value);
   };
 
+  const { setInitialKeywords, setIsTopicsGenerated, isTopicsGenerated } =
+    useKeywordContext();
 
-  const { setInitialKeywords, setIsTopicsGenerated, isTopicsGenerated } = useKeywordContext();
   const [initialSuggestions, setInitialSuggestions] = useState("");
 
- 
   const GetInitialSuggestions = async () => {
     const prompt = getInitialSuggestionsPromtp();
     const completion = await fetchCompletion(prompt);
@@ -36,8 +37,8 @@ function Pillsbadge() {
   };
 
   useEffect(() => {
-    if(isTopicsGenerated===false){
-      GetInitialSuggestions()
+    if (isTopicsGenerated === false) {
+      GetInitialSuggestions();
     }
   }, []);
   return (
