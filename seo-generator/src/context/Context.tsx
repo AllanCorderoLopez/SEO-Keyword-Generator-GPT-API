@@ -66,17 +66,20 @@ interface keywordContextType {
   keywords: keywordSEO[];
   selectedKeywords: keywordSEO;
   setKeyword: React.Dispatch<React.SetStateAction<keywordSEO[]>>;
-  setInitialKeywords: (newKeyword: keywordSEO[]) => void; // Update the type here
+
+  setInitialKeywords: (newKeyword: keywordSEO[]) => void;
+  setInitialBadKeywords: (newKeyword: keywordSEO[]) => void;
+
   setSelectedKeywords: (id: number) => void;
   deleteKeyword: (id: number) => void;
-  initialKeywords: keywordSEO[]; // Include the property here
+  initialKeywords: keywordSEO[];
   topicSelected: string;
   setTopicSelected: React.Dispatch<React.SetStateAction<string>>;
   mainTopic: string;
   setMainTopic: React.Dispatch<React.SetStateAction<string>>;
   isTopicsGenerated: boolean;
   setIsTopicsGenerated: React.Dispatch<React.SetStateAction<boolean>>;
-
+  badKeywords: keywordSEO[];
 
 }
 
@@ -95,6 +98,8 @@ export const KeywordContext = createContext<keywordContextType>({
   setMainTopic: () => {},
   isTopicsGenerated: false,
   setIsTopicsGenerated: () => {},
+  setInitialBadKeywords: () => {},
+  badKeywords: [],
 });
 
 export interface CustomContextProviderProps {
@@ -111,7 +116,7 @@ const KeywordContextProvider: React.FC<CustomContextProviderProps> = ({
     id: 0,
   });
   const [mainTopic, setMainTopic] = useState<string>("");
-
+  const [badKeywords, setBadKeywords] = useState<keywordSEO[]>([]);
   const [topicSelected, setTopicSelected] = useState<string>("");
   const [isTopicsGenerated, setIsTopicsGenerated] = useState<boolean>(false);
 
@@ -149,6 +154,8 @@ const KeywordContextProvider: React.FC<CustomContextProviderProps> = ({
         setMainTopic,
         isTopicsGenerated,
         setIsTopicsGenerated,
+        setInitialBadKeywords: setBadKeywords,
+        badKeywords,
 
       }}
     >
