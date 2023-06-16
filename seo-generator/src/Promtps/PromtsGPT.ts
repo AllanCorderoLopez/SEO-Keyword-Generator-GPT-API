@@ -6,8 +6,8 @@ export const getInitialBadWordsPrompt = (maintopic: string) => {
   return (
     "genere una lista de 10 palabras negativas clave para SEO," +
     "haz unicamente arreglo para hacerle un split" +
-    "que NO se deben utilizar para el posicionamiento web relacionado a este tema: " +
-    "es importante que sean palabras que no contribuyan con el SEO" +
+    "que NO se deben utilizar para el posicionamiento web relacionado a este tema: " + maintopic +
+    ".Es importante que sean palabras que no contribuyan con el SEO" +
     "con este formato [ , , ]" +
     "no utilices palabras relacionadas a la palabra 'SEO' ni uses palabras extensas" +
     "y que tengan mucha relación con el tema principal que es un tema de un sitio web de: " +
@@ -18,10 +18,10 @@ export const getInitialBadWordsPrompt = (maintopic: string) => {
 
 export const getInitialIntentions = (maintopic: string) => {
   return (
-    "genere una lista de 10 palabras de funciones para un sitio web relacionado con el tema:," +
+    "genere una lista de 10 palabras de intenciones para un sitio web relacionado con el tema:," +
     maintopic +
     +"haz unicamente arreglo para hacerle un split" +
-    "que sean funciones del sitio web para usuarios: " +
+    "que sean intenciones del sitio web para usuarios: " +
     "con este formato [ , , ]" +
     "no utilices palabras relacionadas a la palabra 'SEO' ni uses palabras extensas" +
     "y que tengan mucha relación con las funcionalidades de un sitio web de: " +
