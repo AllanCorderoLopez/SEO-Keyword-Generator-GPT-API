@@ -6,36 +6,37 @@ import { getInitialSuggestionsPromtp } from "@/Promtps/PromtsGPT";
 import PhraseList from "./Phrases/PhraseList";
 
 import Stepper from "./Stepper/Stepper";
+import ShareComponent from "./ShareComponent";
 
 function SeoApp() {
   return (
     <div>
-
-
-      <div className="mt-10 w-full flex justify-center items-center app-container">
+      
+      <div className=" w-full flex justify-center items-center app-container">
         <div className="w-full h-full">
           <img
-            src="https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src="https://www.aquitureforma.com/blog/wp-content/uploads/2021/03/portadabona.png"
             alt="Macbook"
             className="img"
           />
         </div>
 
-
-
-        <div className="w-full steps-container">
+        <div></div>
+        <div className="w-full  steps-container">
           <h1 className="flex items-center justify-center h-full px-10">
             <Stepper />
           </h1>
         </div>
-        {/* <VerticalLinearStepper /> */}
+        <div></div>
       </div>
-      <div className="pt-20">
 
-      </div>
-      <PhraseList />
+
+      {/* <div id="loader">
+  <div id="shadow"></div>
+  <div id="box"></div>
+</div>
+<h4>Loader #6</h4> */}
     </div>
-
   );
-};
+}
 export default SeoApp;
