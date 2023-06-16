@@ -18,9 +18,9 @@ export const getInitialBadWordsPrompt = (maintopic: string) => {
 
 export const getInitialIntentions = (maintopic: string) => {
   return (
-    "genere una lista de 10 palabras de intenciones para un sitio web relacionado con el tema:," +
+    "genere una lista de 10 palabras de intenciones mas comunes para un sitio web relacionado con el tema: " +
     maintopic +
-    +"haz unicamente arreglo para hacerle un split" +
+    +" haz unicamente arreglo para hacerle un split" +
     "que sean intenciones del sitio web para usuarios: " +
     "con este formato [ , , ]" +
     "no utilices palabras relacionadas a la palabra 'SEO' ni uses palabras extensas" +
