@@ -34,10 +34,8 @@ function PhraseList() {
   const intentionsArray: keywordSEO[] = phrases.intentions;
   const amountOfKeyword: number = phrases.amountOfKeywords;
 
-  const [finalListPhrases, setFinalListPhrases] = useState<phraseInterest[]>(
-    []
-  );
-    const [isBlocked, setIsBlocked] = useState<boolean>(false);
+  const [finalListPhrases, setFinalListPhrases] = useState<phraseInterest[]>([]);
+  const [isBlocked, setIsBlocked] = useState<boolean>(false);
   const initialInputs: initialInput = {
     mainTopic: phrases.topic,
     badWords: badWordsArray,
