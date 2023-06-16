@@ -33,11 +33,11 @@ export const getMiddleKeywords = (initialInputs: initialInput) => {
   return (
     "genere una cantidad de " +
     initialInputs.amountOfKeywords +
-    " diferentes frases seguidas una de otra sin nunguna numeracion por frase, que esten relacionadas con el siguiente tema:  " +
+    " diferentes frases seguidas una de otra sin nunguna numeracion por frase, que esten relacionadas y orientadas al siguiente tema:  " +
     initialInputs.mainTopic +
-    ". Que no incluyan ninguna de las siguientes palabras: " +
+    ". Que no incluyan ninguna relacion con las siguientes palabras: " +
     initialInputs.badWords +
-    ". Y que vayan relacionadas con esta intencion: " +
+    ". Y que vayan orientadas exclusivamente con estas intenciones para un sitio web: " +
     initialInputs.intentions +
     ". Las frases no deben llevar comillas de ningun tipo. Ademas al final de cada frase debe terminar con este simbolo .# "
   ); //todo PROMPT PARA CREAR LAS MIDDLEKEYWORDS
