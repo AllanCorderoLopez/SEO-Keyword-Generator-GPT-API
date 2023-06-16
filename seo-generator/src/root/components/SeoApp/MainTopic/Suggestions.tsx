@@ -3,8 +3,12 @@ import React from "react";
 import { FaSyncAlt } from "react-icons/fa";
 
 function Suggestions() {
-  const { initialKeywords, setMainTopic, mainTopic } = useKeywordContext();
+  const {setInitialIntentions, setInitialBadKeywords, setIsIntentionsGenerated, setIsBadKeyWordsGenerated, initialKeywords, setMainTopic, mainTopic } = useKeywordContext();
   const handleSetTopic = (keyword: string) => () => {
+    setIsBadKeyWordsGenerated(false);
+    setIsIntentionsGenerated(false);
+    setInitialBadKeywords([]);
+    setInitialIntentions([]);
     setMainTopic(keyword);
   };
   
