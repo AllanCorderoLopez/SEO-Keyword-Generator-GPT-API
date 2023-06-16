@@ -6,18 +6,26 @@ export interface keywordSEO {
 }
 export interface initialInput {
   mainTopic: string;
-  badWords: string[];
-  intentions: string[];
+  badWords: keywordSEO[];
+  intentions: keywordSEO[];
   amountOfKeywords: number;
   initialKeywords: keywordSEO[]; // Add the property here
 }
-export interface phraseInterest{
+
+export interface phareList {
+  topic: string;
+  badWords: keywordSEO[];
+  intentions: keywordSEO[];
+  amountOfKeywords: number;
+}
+
+export interface phraseInterest {
   id: number;
   phrase: string;
 }
 
-export interface ArrayOfPhrases{
-arrayOfPhrases: phraseInterest[];
+export interface ArrayOfPhrases {
+  arrayOfPhrases: phraseInterest[];
 }
 
 export const getMiddleKeywords = (initialInputs: initialInput) => {
@@ -30,12 +38,13 @@ export const getMiddleKeywords = (initialInputs: initialInput) => {
     ". Que no incluyan ninguna de las siguientes palabras: " +
     initialInputs.badWords +
     ". Y que vayan relacionadas con esta intencion: " +
-    initialInputs.intentions + ". Las frases no deben llevar comillas de ningun tipo. Ademas al final de cada frase debe terminar con este simbolo .# "
+    initialInputs.intentions +
+    ". Las frases no deben llevar comillas de ningun tipo. Ademas al final de cada frase debe terminar con este simbolo .# "
   ); //todo PROMPT PARA CREAR LAS MIDDLEKEYWORDS
 };
 
 const getInitialSuggestions = () => {
-  return "genere una lista de 15 palabras clave, más cotidianas y comunes en sitios web que funcionen como base para un tema pricipal de una página web para el uso de posicionamiento web, separadas por comas, es importante que cada elemento esté separado por comas, sin utilizar conjunciones y los temas deben ser variados, no utilices palabras relacionadas a la palabra 'SEO'"; 
+  return "genere una lista de 15 palabras clave, más cotidianas y comunes en sitios web que funcionen como base para un tema pricipal de una página web para el uso de posicionamiento web, separadas por comas, es importante que cada elemento esté separado por comas, sin utilizar conjunciones y los temas deben ser variados, no utilices palabras relacionadas a la palabra 'SEO'";
 };
 
 const getFinalPrompt = (keywords: string[]) => {
@@ -47,9 +56,11 @@ const getInitialPrompt = () => {
 };
 
 export const getIncrementPhrase = (phrase: phraseInterest) => {
-  return "Tome como base la frase que se esta proporcionado y amplie ligeramente su contenido, no puede utilizar mas de 10 palabras para ampliar la siguiente frase: " + phrase.phrase;
+  return (
+    "Tome como base la frase que se esta proporcionado y amplie ligeramente su contenido, no puede utilizar mas de 10 palabras para ampliar la siguiente frase: " +
+    phrase.phrase
+  );
 };
-
 
 const getInitialBadWordsPrompt = (initialInputs: initialInput) => {
   return (
@@ -74,6 +85,9 @@ interface keywordContextType {
 
   setInitialKeywords: (newKeyword: keywordSEO[]) => void;
   setInitialBadKeywords: (newKeyword: keywordSEO[]) => void;
+  setInitialIntentions: (newKeyword: keywordSEO[]) => void;
+  setSelectedIntentions: (newKeyword: keywordSEO[]) => void;
+  setSelectedBadKeywords: (newKeyword: keywordSEO[]) => void;
 
   setSelectedKeywords: (id: number) => void;
   deleteKeyword: (id: number) => void;
@@ -84,10 +98,32 @@ interface keywordContextType {
   setMainTopic: React.Dispatch<React.SetStateAction<string>>;
   isTopicsGenerated: boolean;
   setIsTopicsGenerated: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsBadKeyWordsGenerated: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsIntentionsGenerated: React.Dispatch<React.SetStateAction<boolean>>;
+  isBadKeyWordsGenerated: boolean;
+  isIntentionsGenerated: boolean;
+
   badKeywords: keywordSEO[];
+  intentions: keywordSEO[];
+  selectedIntentions: keywordSEO[];
+  selectedBadKeywords: keywordSEO[];
+  setActiveStep: React.Dispatch<React.SetStateAction<number>>;
+  activeStep: number;
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  showModal: boolean;
 
+  setPhrases: React.Dispatch<React.SetStateAction<phareList>>;
+  phrases: phareList;
+
+  initialInputs: initialInput;
+  setInitialInputs: React.Dispatch<React.SetStateAction<initialInput>>;
+  setPhrasesThatIntrest: React.Dispatch<React.SetStateAction<phraseInterest[]>>;
+  phrasesThatIntrest: phraseInterest[];
+  setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
+  isActive: boolean;
+  setIsLoadedPhrases: React.Dispatch<React.SetStateAction<boolean>>;
+  isLoadedPhrases: boolean;
 }
-
 
 export const KeywordContext = createContext<keywordContextType>({
   keywords: [],
@@ -105,6 +141,45 @@ export const KeywordContext = createContext<keywordContextType>({
   setIsTopicsGenerated: () => {},
   setInitialBadKeywords: () => {},
   badKeywords: [],
+  setInitialIntentions: () => {},
+  intentions: [],
+
+  setSelectedIntentions: () => {},
+  selectedIntentions: [],
+  setSelectedBadKeywords: () => {},
+  selectedBadKeywords: [],
+  setIsBadKeyWordsGenerated: () => {},
+  setIsIntentionsGenerated: () => {},
+  isBadKeyWordsGenerated: false,
+  isIntentionsGenerated: false,
+  setActiveStep: () => {},
+  activeStep: 0,
+  setShowModal: () => {},
+  showModal: false,
+
+  initialInputs: {
+    mainTopic: "",
+    badWords: [],
+    intentions: [],
+    amountOfKeywords: 0,
+    initialKeywords: [],
+  },
+
+  setInitialInputs: () => {},
+
+  phrases: {
+    topic: "",
+    badWords: [],
+    intentions: [],
+    amountOfKeywords: 0,
+  },
+  setPhrases: () => {},
+  phrasesThatIntrest: [],
+  setPhrasesThatIntrest: () => {},
+  setIsActive: () => {},
+  isActive: false,
+  setIsLoadedPhrases: () => {},
+  isLoadedPhrases: false,
 });
 
 export interface CustomContextProviderProps {
@@ -122,8 +197,41 @@ const KeywordContextProvider: React.FC<CustomContextProviderProps> = ({
   });
   const [mainTopic, setMainTopic] = useState<string>("");
   const [badKeywords, setBadKeywords] = useState<keywordSEO[]>([]);
+  const [selectedBadKeywords, setSelectedBadKeywords] = useState<keywordSEO[]>(
+    []
+  );
+  const [intentions, setIntentions] = useState<keywordSEO[]>([]);
+  const [selectedIntentions, setSelectedIntentions] = useState<keywordSEO[]>(
+    []
+  );
   const [topicSelected, setTopicSelected] = useState<string>("");
   const [isTopicsGenerated, setIsTopicsGenerated] = useState<boolean>(false);
+  const [isBadKeyWordsGenerated, setIsBadKeyWordsGenerated] =
+    useState<boolean>(false);
+  const [isIntentionsGenerated, setIsIntentionsGenerated] =
+    useState<boolean>(false);
+  const [activeStep, setActiveStep] = useState<number>(0);
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [phrasesThatIntrest, setPhrasesThatIntrest] = useState<
+    phraseInterest[]
+  >([]);
+  const [isActive, setIsActive] = useState<boolean>(false);
+  const [isLoadedPhrases, setIsLoadedPhrases] = useState<boolean>(false);
+
+  const [phrases, setPhrases] = useState<phareList>({
+    topic: "",
+    badWords: [],
+    intentions: [],
+    amountOfKeywords: 0,
+  });
+
+  const [initialInputs, setInitialInputs] = useState<initialInput>({
+    mainTopic: "",
+    badWords: [],
+    intentions: [],
+    amountOfKeywords: 0,
+    initialKeywords: [],
+  });
 
   const setKeyword = (id: number) => {
     if (id === 0) {
@@ -133,9 +241,6 @@ const KeywordContextProvider: React.FC<CustomContextProviderProps> = ({
       setSelectedKeywords(changeKeyword);
     }
   };
-
-  
-
 
   const deleteKeyword = (id: number) => {
     setKeywords((prevKeywords) =>
@@ -161,6 +266,32 @@ const KeywordContextProvider: React.FC<CustomContextProviderProps> = ({
         setIsTopicsGenerated,
         setInitialBadKeywords: setBadKeywords,
         badKeywords,
+        setInitialIntentions: setIntentions,
+        intentions,
+
+        setSelectedBadKeywords: setSelectedBadKeywords,
+        selectedBadKeywords,
+        setSelectedIntentions: setSelectedIntentions,
+        selectedIntentions,
+        setIsBadKeyWordsGenerated,
+        setIsIntentionsGenerated,
+        isBadKeyWordsGenerated,
+        isIntentionsGenerated,
+        setActiveStep,
+        activeStep,
+        setShowModal,
+        showModal,
+
+        initialInputs,
+        setInitialInputs,
+        setPhrases,
+        phrases,
+        setPhrasesThatIntrest,
+        phrasesThatIntrest,
+        setIsActive,
+        isActive,
+        setIsLoadedPhrases,
+        isLoadedPhrases,
 
       }}
     >
@@ -170,4 +301,3 @@ const KeywordContextProvider: React.FC<CustomContextProviderProps> = ({
 };
 export const useKeywordContext = () => useContext(KeywordContext);
 export default KeywordContextProvider;
- 
