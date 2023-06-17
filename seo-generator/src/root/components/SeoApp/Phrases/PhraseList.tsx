@@ -34,7 +34,9 @@ function PhraseList() {
   const intentionsArray: keywordSEO[] = phrases.intentions;
   const amountOfKeyword: number = phrases.amountOfKeywords;
 
-  const [finalListPhrases, setFinalListPhrases] = useState<phraseInterest[]>([]);
+  const [finalListPhrases, setFinalListPhrases] = useState<phraseInterest[]>(
+    []
+  );
   const [isBlocked, setIsBlocked] = useState<boolean>(false);
   const initialInputs: initialInput = {
     mainTopic: phrases.topic,
@@ -75,7 +77,7 @@ function PhraseList() {
     setPhrasesThatIntrest(phraseSEOArray);
     setIsActive(false);
     console.log("phraseSEOArray", phraseSEOArray);
-    setIsBlocked(false)
+    setIsBlocked(false);
   };
 
   const handleGetMoreSuggestions = async () => {
@@ -197,7 +199,7 @@ function PhraseList() {
       </button>
       <div
         className={`main-modal color-bg2 fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster ${
-          phrasesThatIntrest.length === 0 && isBlocked === false?  "" : "hidden"
+          phrasesThatIntrest.length === 0 && isBlocked === false ? "" : "hidden"
         }`}
       ></div>
       <div
@@ -219,7 +221,7 @@ function PhraseList() {
             <div
               id={index.toString()}
               key={index}
-              className="phrase-container  mt-5 justify-between flex animate-slide-bottom my-2 rounded-lg p-4 px-6"
+              className="phrase-container mt-5 justify-between flex animate-slide-bottom my-2 rounded-lg p-4 px-6"
             >
               <div>
                 <h1 className="font-semibold text-lg h1-phrase">
