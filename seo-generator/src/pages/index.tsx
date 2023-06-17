@@ -1,6 +1,7 @@
 import Functions from "@/root/components/Functions/Functions";
 import ParallaxContainer from "@/root/components/Functions/ParallaxContainer";
 import PhrasesSkeleton from "@/root/components/Functions/PhrasesSkeleton";
+import SocialProof from "@/root/components/Functions/SocialProof";
 import Navbar from "@/root/components/NavBar/Navbar";
 import Footer from "@/root/components/SeoApp/Footer/Footer";
 import SeoApp from "@/root/components/SeoApp/SeoApp";
