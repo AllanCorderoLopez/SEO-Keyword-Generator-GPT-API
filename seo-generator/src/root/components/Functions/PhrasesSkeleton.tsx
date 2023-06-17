@@ -149,7 +149,8 @@ function PhrasesSkeleton() {
         >
           <div className="py-3 px-4 phrase-container rounded-lg inline-block max-w-xl	 whitespace-nowrap">
             <h2 className="font-medium text-gray-200 text-xl ">
-              Descubre los mejores destinos para practicar snorkel y maravíllate
+              Descubre los mejores destinos para practicar snorkel y <br/>
+              maravíllate
               con la belleza de la vida marina.
             </h2>
           </div>
@@ -217,7 +218,7 @@ function PhrasesSkeleton() {
           style={{ minWidth: "100%" }}
         >
           <div className="py-3 px-4 phrase-container-white  rounded-lg inline-block max-w-xl	ml-3 whitespace-nowrap">
-            <h2 className="font-medium text-gray-200 text-xl ">
+            <h2 className="font-medium text-gray-900 text-xl ">
               Conoce los beneficios del yoga y encuentra paz y <br/> equilibrio en tu
               vida diaria.
             </h2>

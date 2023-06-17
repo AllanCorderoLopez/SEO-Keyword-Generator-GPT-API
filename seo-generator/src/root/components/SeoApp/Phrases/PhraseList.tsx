@@ -175,7 +175,7 @@ function PhraseList() {
 
   return (
     <div className="rounded-lg items-center justify-center ">
-      <div className="flex">
+      <div className="flex btns-sm">
       <button
         onClick={handleGetInitialSuggestions}
         className={`btn-suggestions-topic-act-1 focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-2 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 ${isActive ? 'hidden' : 'animate-slide-top'}`}      >

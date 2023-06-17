@@ -9,7 +9,7 @@ import ParallaxContainer from "./ParallaxContainer";
 function Functions() {
   return (
     <section id="functions" className="bg-white py-20  mb-5  w-full ">
-      <div className="flex items-center px-40 justify-between mb-20">
+      <div className="flex cont1 items-center px-40 justify-between mb-20">
         <div className="mr-10 parallax-container rounded-lg bg-gray-100 ">
           <div className="p-5">
             <div className=" z-10 fadeInUp animate-delay-100">

@@ -13,7 +13,7 @@ function SeoApp() {
     <section id="app">
       
       <div className=" w-full flex justify-center items-center app-container bg-gray-200">
-        <div className="w-full h-full">
+        <div className="w-full h-full hidden-sm ">
           <img
             src="https://www.aquitureforma.com/blog/wp-content/uploads/2021/03/portadabona.png"
             alt="Macbook"

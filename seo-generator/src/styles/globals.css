@@ -710,3 +710,55 @@ h4 {
   color: #111;
   text-align: center;
 }
+
+
+@media only screen and (max-width : 900px) {
+
+  .cont1{
+    visibility: hidden; 
+  }
+
+  html{
+    width: 200%;
+  }
+
+.fadeInUp img{
+  visibility: hidden;
+}
+
+.parallax-container-IA{
+  margin-top: -40rem;
+  margin-left: -7.5rem;
+  width: 180vw;
+}
+.img {
+  visibility: hidden;
+}
+.app-container{
+  
+}
+
+.hidden-sm{
+  display: none;
+}
+
+.step-container{
+  width: 130vw;
+height: 80vh;
+}
+
+.middle-step-container{
+  margin-top: 2rem;
+  width: 130vw;
+  height: 95vh;
+}
+footer{
+margin-bottom: 2rem;
+padding-bottom: 7rem;
+}
+
+.btns-sm{
+  margin-bottom: 2rem;
+}
+
+}
