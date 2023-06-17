@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { keywordSEO, useKeywordContext } from "@/context/Context";
 import React from "react";
-import Masonry from "react-masonry-css";
 import { FaCheck, FaPlus } from "react-icons/fa";
 import { AiOutlinePlus } from "react-icons/ai";
 import { BsCheckLg } from "react-icons/bs";
