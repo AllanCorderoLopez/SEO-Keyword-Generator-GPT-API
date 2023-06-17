@@ -12,10 +12,36 @@
   padding: 0;
   left: 0;
 }
-
-.app-container {
-  background-color: #ffffff;
+html {
+  scroll-behavior: smooth; /* Agrega el desplazamiento suave en toda la página */
 }
+.app-container {
+  border-radius: 20px;
+  background-color: #f0f0f0af;
+}
+
+
+body::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+
+	background-color: transparent;
+}
+
+body::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #5c5c5c;
+}
+
+
+
 .steps-container {
   width: 135%;
 }
@@ -36,6 +62,14 @@
 
 .btn-suggestions-topic {
   background-color: #4c35de;
+}
+.btn-suggestions-topic-act-1 {
+  background-color: #381de9;
+  margin-top: 10px;
+}
+.btn-suggestions-topic-act-1:hover {
+  background-color: #281891;
+  margin-top: 10px;
 }
 .btn-suggestions-bad {
   background-color: #6655d6;
@@ -172,10 +206,18 @@
   margin-top: -16rem;
 }
 
+.phrase-container-final {
+  margin-bottom: 15px;
+  background-color: #ebebeb65;
+}
+
 .phrase-container {
   margin-bottom: 15px;
-  box-shadow: 0px 10px 10px -10px rgba(88, 88, 88, 0.829);
-  background-color: #4c35de;
+  background-color: #41414186;
+}
+.phrase-container-white {
+  margin-bottom: 15px;
+  background-color: #e9e9e9f6;
 }
 
 .phrase-container2 {
@@ -189,7 +231,11 @@
 }
 .shadow-inner-shadow{
 
-  box-shadow:  0 25px 50px 10px rgba(0, 0, 0, 0.178);
+  box-shadow:  0 25px 10px 10px rgba(46, 46, 46, 0.178);
+}
+
+.ajust ::-webkit-scrollbar{
+  visibility: hidden;
 }
 .plus {
   background-color: #e7e2ff;
@@ -208,7 +254,7 @@
 }
 .phrases-container {
   padding-right: 20px;
-  height: 25rem;
+  height: 22rem;
 }
 .color-bg {
   background-color: #ffffff9a;
@@ -622,7 +668,13 @@ h4 {
   background-color: transparent;
 }
 .parallax-container {
-  background-color: #f9fafb;
+  background-color: #f3f3f3;
+  border-radius: 20px;
+}
+.parallax-container-IA {
+  border-radius: 20px;
+  background: rgb(46,22,46);
+  background: radial-gradient(circle, rgba(46,22,46,1) 0%, rgba(22,23,39,1) 55%, rgba(17,24,39,1) 100%);
 }
 .parallax-container h1 {
   color: #292f36;
