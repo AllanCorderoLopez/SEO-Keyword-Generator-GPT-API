@@ -243,7 +243,27 @@ html {
 
 .ajust ::-webkit-scrollbar{
   visibility: hidden;
+  background-color: transparent;
 }
+
+.ajust ::-webkit-scrollbar-track
+{
+
+	background-color: transparent;
+}
+
+.ajust ::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: transparent;
+}
+
+.ajust ::-webkit-scrollbar-thumb
+{
+	-webkit-box-shadow: inset 0 0 6px transparent;
+	background-color: transparent;
+}
+
 .plus {
   background-color: #e7e2ff;
   color: #773dff;

@@ -17,13 +17,12 @@ function Functions() {
             </div>
             <a>
               <h5 className="m text-md font-bold tracking-tight text-gray-800 dark:text-white">
-                Noteworthy technology acquisitions 2021
+              Maximiza tu inversión en marketing.
               </h5>
             </a>
             <p className="mb-3 font-medium text-gray-700 dark:text-gray-400">
-              Here are the biggest enterprise technology acquisitions of 2021 so
-              far, in reverse chronological order.
-            </p>
+            Maximiza el retorno de tu inversión en marketing digital con SEO web.    
+                   </p>
           </div>
         </div>
         <div className="mr-10 parallax-container rounded-lg bg-gray-100 ">
@@ -32,12 +31,11 @@ function Functions() {
 
             <a>
               <h5 className="m text-md font-bold tracking-tight text-gray-800 dark:text-white">
-                Noteworthy technology acquisitions 2021
+              Aumenta tu visibilidad en los motores de búsqueda.
               </h5>
             </a>
             <p className="mb-3 font-medium text-gray-700 dark:text-gray-400">
-              Here are the biggest enterprise technology acquisitions of 2021 so
-              far, in reverse chronological order.
+            Destaca en línea y alcanza nuevos clientes con una mayor visibilidad en los motores de búsqueda.
             </p>
           </div>
         </div>
@@ -47,12 +45,11 @@ function Functions() {
 
             <a>
               <h5 className="m text-md font-bold tracking-tight text-gray-800 dark:text-white">
-                Noteworthy technology acquisitions 2021
+              Posiciona tu negocio por encima de la competencia.
               </h5>
             </a>
             <p className="mb-3 font-medium text-gray-700 dark:text-gray-400">
-              Here are the biggest enterprise technology acquisitions of 2021 so
-              far, in reverse chronological order.
+            Supera a la competencia y conquista el mercado posicionando tu negocio en la cima.
             </p>
           </div>
         </div>
