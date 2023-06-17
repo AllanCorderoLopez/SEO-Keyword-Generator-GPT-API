@@ -11,7 +11,7 @@ function Jumbotron() {
     <section className="bg-color-nav py-60  w-full ">
       <div className="grid px-4 herosection ml-10 lg:gap-8 xl:gap-0  lg:grid-cols-12">
         <div className="fadeInUp  place-self-center lg:col-span-7">
-          <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-white">
+          <h1 className="max-w-2xl mt-16 mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-white">
             Potencie el SEO de su sitio web con IA.
           </h1>
           <p className="max-w-2xl mb-6 font-light lg:mb-8 md:text-lg lg:text-xl text-gray-300">
@@ -19,7 +19,7 @@ function Jumbotron() {
             con palabras clave que realmente le interesan a su audiencia.
           </p>
           <a
-            href="#"
+            href="#app"
             className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-indigo-800 rounded-lg bg-white hover:bg-indigo-800 hover:text-white focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
           >
            Comenzar
