@@ -29,7 +29,6 @@ export interface ArrayOfPhrases {
 }
 
 export const getMiddleKeywords = (initialInputs: initialInput) => {
-  //todo create interface
   return (
     "genere una cantidad de " +
     initialInputs.amountOfKeywords +
@@ -40,7 +39,7 @@ export const getMiddleKeywords = (initialInputs: initialInput) => {
     ". Y que vayan orientadas exclusivamente con estas intenciones para un sitio web: " +
     initialInputs.intentions.map(intention => intention.keyword).join(', ') +
     ". Las frases no deben llevar comillas de ningun tipo. Cada frase generada tiene que terminar obligatoriamente con este simbolo: # "
-  ); //todo PROMPT PARA CREAR LAS MIDDLEKEYWORDS
+  );
 };
 
 const getInitialSuggestions = () => {

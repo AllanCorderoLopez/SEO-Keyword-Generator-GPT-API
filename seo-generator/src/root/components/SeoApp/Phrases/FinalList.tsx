@@ -4,9 +4,14 @@ import { AiOutlineShareAlt } from "react-icons/ai";
 import { FaRegCopy, FaTimes } from "react-icons/fa";
 import ModalSocialmedia from "./ModalSocialmedia";
 import { ToastContainer, toast } from "react-toastify";
+export interface phrase{
+  phrase: string;
+}
 function FinalList({ arrayOfPhrases }: ArrayOfPhrases) {
-  const handleCopy = (phrase: string) => {
-    navigator.clipboard.writeText(phrase);
+
+
+  const handleCopy = (phrase: phrase) => {
+    navigator.clipboard.writeText(phrase.phrase);
     toast.success('Copiado al portapapeles', {
       position: "bottom-left",
       autoClose: 2000,
@@ -22,11 +27,11 @@ function FinalList({ arrayOfPhrases }: ArrayOfPhrases) {
     <div className="">
 
       <h1 className="font-medium text-medium text-gray-800 pt-5">
-        Estas son las frases que potenciaran el SEO de tu sitio.
-      </h1>
+        Comparte o copia.
+      </h1> 
 
       <div className="my-2 rounded-lg  p-4">
-        {arrayOfPhrases.map((phrase, index) => (
+        {arrayOfPhrases.map((phrase:phrase, index) => (
           <div
             className="phrase-container-final justify-between flex animate-slide-top my-2 rounded-lg p-4 px-6"
             key={index}
@@ -36,11 +41,11 @@ function FinalList({ arrayOfPhrases }: ArrayOfPhrases) {
             </h1>
             <div className="flex">
               <button>
-                <ModalSocialmedia />
+                <ModalSocialmedia phrase={phrase.phrase} />
               </button>
 
               <button
-                onClick={() => handleCopy(phrase.phrase)}
+                onClick={() => handleCopy(phrase)}
                 className="ml-3 px-2 items-center content-center"
               >
                 <div className="copy">

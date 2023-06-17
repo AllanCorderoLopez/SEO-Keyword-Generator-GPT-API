@@ -6,10 +6,12 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import {} from "react-share";
-
-const ShareButtonsComponent = () => {
-  const shareUrl = "https://example.com"; // URL a compartir
-  const textToShare = "¡Mira este contenido increíble!"; // Texto a compartir
+export interface phrases{
+  phrase: string;
+}
+const ShareButtonsComponent = (phrase:phrases) => {
+  const shareUrl = "\n¡Generado en SeoStudio!"; // URL a compartir
+  let textToShare = phrase.phrase; // Texto a compartir
 
   const handleShareClick = (event: any, network: any) => {
     event.preventDefault();

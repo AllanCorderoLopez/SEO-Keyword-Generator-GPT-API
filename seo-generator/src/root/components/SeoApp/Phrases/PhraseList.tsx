@@ -55,15 +55,13 @@ function PhraseList() {
   };
 
   const handleGetInitialSuggestions = async () => {
-    //DELETE THIS
     const phraseList: phareList = {
       topic: mainTopic,
       badWords: selectedBadKeywords,
       intentions: selectedIntentions,
-      amountOfKeywords: 15,
+      amountOfKeywords: 10,
     };
     setPhrases(phraseList);
-    //DELETE THIS ^^^^^
 
     const prompt = getMiddleKeywords(initialInputs);
     const completion = await fetchCompletion(prompt);
@@ -177,21 +175,22 @@ function PhraseList() {
 
   return (
     <div className="rounded-lg items-center justify-center ">
+      <div className="flex">
       <button
         onClick={handleGetInitialSuggestions}
-        className={`btn-suggestions-topic-act-1 focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-4 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 ${isActive ? 'hidden' : 'animate-slide-top'}`}      >
+        className={`btn-suggestions-topic-act-1 focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-2 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 ${isActive ? 'hidden' : 'animate-slide-top'}`}      >
         Generar nuevas frases{" "}
       </button>
       <span> </span>
       <button
         onClick={() => handleIncrementAllPhrases(phrasesThatIntrest)}
-        className={`btn-suggestions-topic-act-1 focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-4 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 ${isActive ? 'hidden' : 'animate-slide-top'}`}      >
+        className={`btn-suggestions-topic-act-1 focus:outline-none text-white font-medium rounded-lg text-sm px-3 py-1 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 ${isActive ? 'hidden' : 'animate-slide-top'}`}      >
         {" "}
         Ampliar todas las frases
       </button>
       <button
         onClick={handleButtonClick}
-        className={` flex btn-suggestions-topic-act-1 focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-4 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 ${isActive ? 'hidden' : 'animate-slide-top'}`}      >
+        className={` flex btn-suggestions-topic-act-2 ml-3 focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-4 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 ${isActive ? 'hidden' : 'animate-slide-top'}`}      >
       
         Tengo lo que necesito{" "}
         <svg
@@ -208,6 +207,9 @@ function PhraseList() {
               ></path>
             </svg>
       </button>
+      </div>
+    
+
       <div
         className={`main-modal color-bg2 fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster ${
           phrasesThatIntrest.length === 0 && isBlocked === false ? "" : "hidden"
@@ -261,6 +263,7 @@ function PhraseList() {
           </div>
         ))}
       </div>
+
     </div>
   );
 }

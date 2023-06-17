@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { AiOutlineShareAlt } from "react-icons/ai";
 import ShareButtonsComponent from "../ShareComponent";
-
-function ModalSocialmedia() {
+export interface phrases{
+  phrase: string;
+}
+function ModalSocialmedia(phrase: phrases) {
   const [showModal, setShowModal] = useState(false);
 
   const closeModal = () => {
@@ -46,7 +48,7 @@ function ModalSocialmedia() {
             <div className="flex  p-10 justify-center items-center">
               <div>
                 <div className="mb-10 flex justify-center">
-                  <ShareButtonsComponent />
+                  <ShareButtonsComponent phrase={phrase.phrase} />
                 </div>
                 <div className="items-center justify-center flex">
                   <button

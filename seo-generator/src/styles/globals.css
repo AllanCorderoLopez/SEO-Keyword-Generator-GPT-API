@@ -13,7 +13,7 @@
   left: 0;
 }
 html {
-  scroll-behavior: smooth; /* Agrega el desplazamiento suave en toda la página */
+  scroll-behavior: smooth;
 }
 .app-container {
   border-radius: 20px;
@@ -21,23 +21,22 @@ html {
 }
 
 
-body::-webkit-scrollbar-track
+*::-webkit-scrollbar-track
 {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 
-	background-color: transparent;
+	background-color: #757575;
 }
 
-body::-webkit-scrollbar
+*::-webkit-scrollbar
 {
 	width: 12px;
-	background-color: transparent;
+	background-color: #000000;
 }
 
-body::-webkit-scrollbar-thumb
+*::-webkit-scrollbar-thumb
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #5c5c5c;
+	background-color: #444444;
 }
 
 
@@ -65,11 +64,19 @@ body::-webkit-scrollbar-thumb
 }
 .btn-suggestions-topic-act-1 {
   background-color: #381de9;
-  margin-top: 10px;
+  margin-top: 30px;
+  margin-right: 5px;
+
+}
+.btn-suggestions-topic-act-2 {
+  box-shadow: 0px 5px 10px 5px #8d7bff34;
+  background-color: #ffffff;
+  color: #381de9;
+  margin-top: 30px;
+  margin-left: 10px;
 }
 .btn-suggestions-topic-act-1:hover {
   background-color: #281891;
-  margin-top: 10px;
 }
 .btn-suggestions-bad {
   background-color: #6655d6;
@@ -122,7 +129,7 @@ body::-webkit-scrollbar-thumb
 }
 
 .stepper > .step::after {
-  background-color: #000000; /* Color de la línea divisoria entre los pasos */
+  background-color: #000000;
   bottom: 0;
 }
 
@@ -132,7 +139,7 @@ body::-webkit-scrollbar-thumb
 }
 
 .stepper.inactive {
-  background-color: #8679da; /* Color de fondo cuando el paso está inactivo */
+  background-color: #8679da; 
 }
 @keyframes slide-top {
   0% {
@@ -258,16 +265,11 @@ body::-webkit-scrollbar-thumb
 }
 .color-bg {
   background-color: #ffffff9a;
-  /* The image used */
-
-  /* Add the blur effect */
   filter: blur(8px);
   -webkit-filter: blur(8px);
 
-  /* Full height */
   height: 100%;
 
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -360,16 +362,12 @@ body::-webkit-scrollbar-thumb
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  grid-auto-rows: min-content; /* Ajusta la altura de las filas automáticamente según el contenido */
-  justify-items: center; /* Centra los elementos horizontalmente dentro de las celdas */
-  align-items: center; /* Centra los elementos verticalmente dentro de las celdas */
+  grid-auto-rows: min-content; 
+  justify-items: center; 
+  align-items: center; 
 }
 
 #loader {
-  /* Uncomment this to make it run! */
-  /*
-     animation: loader 5s linear infinite; 
-  */
 
   position: absolute;
   top: calc(50% - 20px);
