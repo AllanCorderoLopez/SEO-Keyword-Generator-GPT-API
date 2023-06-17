@@ -10,9 +10,9 @@ import ShareComponent from "./ShareComponent";
 
 function SeoApp() {
   return (
-    <div>
+    <section id="app">
       
-      <div className=" w-full flex justify-center items-center app-container">
+      <div className=" w-full flex justify-center items-center app-container bg-gray-200">
         <div className="w-full h-full">
           <img
             src="https://www.aquitureforma.com/blog/wp-content/uploads/2021/03/portadabona.png"
@@ -36,7 +36,7 @@ function SeoApp() {
   <div id="box"></div>
 </div>
 <h4>Loader #6</h4> */}
-    </div>
+    </section>
   );
 }
 export default SeoApp;

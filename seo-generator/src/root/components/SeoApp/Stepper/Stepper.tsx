@@ -10,7 +10,7 @@ import MiddlephraseList from "../Phrases/MiddlephraseList";
 const Step1Component = () => (
   <div>
     <h1 className="font-bold text-3xl">
-      ¿Qué tipo de negocio estás desarrollando?
+      Describe tu sitio web.
     </h1>
   </div>
 );

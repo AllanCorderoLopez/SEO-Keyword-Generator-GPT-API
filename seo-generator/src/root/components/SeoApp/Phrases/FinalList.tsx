@@ -28,7 +28,7 @@ function FinalList({ arrayOfPhrases }: ArrayOfPhrases) {
       <div className="my-2 rounded-lg  p-4">
         {arrayOfPhrases.map((phrase, index) => (
           <div
-            className="phrase-container justify-between flex animate-slide-top my-2 rounded-lg p-4 px-6"
+            className="phrase-container-final justify-between flex animate-slide-top my-2 rounded-lg p-4 px-6"
             key={index}
           >
             <h1 className="font-semibold text-lg h1-phrase">

@@ -176,26 +176,37 @@ function PhraseList() {
   };
 
   return (
-    <div className="rounded-lg p-4   items-center justify-center ">
+    <div className="rounded-lg items-center justify-center ">
       <button
         onClick={handleGetInitialSuggestions}
-        className="btn-suggestions-topic focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 animate-slide-top"
-      >
-        Generar Frases{" "}
+        className={`btn-suggestions-topic-act-1 focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-4 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 ${isActive ? 'hidden' : 'animate-slide-top'}`}      >
+        Generar nuevas frases{" "}
       </button>
       <span> </span>
       <button
         onClick={() => handleIncrementAllPhrases(phrasesThatIntrest)}
-        className="btn-suggestions-topic focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 animate-slide-top"
-      >
+        className={`btn-suggestions-topic-act-1 focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-4 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 ${isActive ? 'hidden' : 'animate-slide-top'}`}      >
         {" "}
-        Incrementar todas las frases
+        Ampliar todas las frases
       </button>
       <button
         onClick={handleButtonClick}
-        className="ml-1 btn-suggestions-topic focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 animate-slide-top"
-      >
-        Listo{" "}
+        className={` flex btn-suggestions-topic-act-1 focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-4 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 ${isActive ? 'hidden' : 'animate-slide-top'}`}      >
+      
+        Tengo lo que necesito{" "}
+        <svg
+              aria-hidden="true"
+              className="ml-2 -mr-1 w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
       </button>
       <div
         className={`main-modal color-bg2 fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster ${
@@ -211,7 +222,7 @@ function PhraseList() {
           <div id="loader"></div>
         </div>
         <h1 className="pulse-ani font-bold mt-80 text-gray-800 text-2xl">
-          Trabajando en potenciar tu sitio...
+          Generando frases que potencien su sitio web...
         </h1>
       </div>
       <div className="items-center overflow-x-hidden overflow-auto phrases-container justify-center">
@@ -221,7 +232,7 @@ function PhraseList() {
             <div
               id={index.toString()}
               key={index}
-              className="phrase-container mt-5 justify-between flex animate-slide-bottom my-2 rounded-lg p-4 px-6"
+              className="phrase-container-final mt-5 justify-between flex animate-slide-bottom my-2 rounded-lg p-4 px-6"
             >
               <div>
                 <h1 className="font-semibold text-lg h1-phrase">

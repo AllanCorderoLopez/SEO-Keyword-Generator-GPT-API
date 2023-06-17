@@ -79,10 +79,11 @@ function SelectMainTopic() {
     setSelectedIntentions([]);
     setSelectedBadKeywords([]);
   }
+  
   return (
-    <div className="step-container">
+    <div className="step-container pt-10">
       <h1 className="font-bold text-4xl">
-        ¿Qué tipo de negocio estás desarrollando?
+        Describe tu sitio web.
       </h1>
       <div className="pt-10 flex">
         <input
@@ -122,7 +123,9 @@ function SelectMainTopic() {
           </div>
 
           <div className="font-medium text-medium pt-5 pl-5 h1-color-suggestion">
-            <button>
+            <button
+              onClick={() => GetInitialSuggestions()}
+              >
               <FaSyncAlt />
             </button>
           </div>
