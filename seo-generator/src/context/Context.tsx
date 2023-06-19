@@ -56,8 +56,7 @@ const getInitialPrompt = () => {
 
 export const getIncrementPhrase = (phrase: phraseInterest) => {
   return (
-    "Tome como base la frase que se esta proporcionado y amplie ligeramente su contenido, no puede utilizar mas de 10 palabras para ampliar la siguiente frase: " +
-    phrase.phrase
+    "Amplie ligeramente el contenido de esta frase: "+ phrase.phrase +", no puede utilizar mas de 10 palabras para ampliar la frase, solo amplia y devuelve la frase unida y completa : "  
   );
 };
 
