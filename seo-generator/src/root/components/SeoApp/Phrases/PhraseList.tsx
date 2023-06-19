@@ -74,7 +74,7 @@ function PhraseList() {
       }));
     setPhrasesThatIntrest(phraseSEOArray);
     setIsActive(false);
-    console.log("phraseSEOArray", phraseSEOArray);
+    console.log("phraseSEOArray", phraseSEOArray);// TODO: Dont use console messages
     setIsBlocked(false);
   };
 
@@ -119,7 +119,7 @@ function PhraseList() {
             phrase: newPhrase ? newPhrase.trim() : "",
           };
           updatedPhrases.push(updatedPhrase);
-        } else {
+        } else { //TODO: improve this code with reverse if and early return
           updatedPhrases.push(phrase);
         }
       })

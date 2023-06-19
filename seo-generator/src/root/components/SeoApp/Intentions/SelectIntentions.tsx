@@ -40,7 +40,7 @@ function SelectIntentions() {
   const GetInitialSuggestions = async () => {
     const prompt = getInitialIntentions(mainTopic);
     const completion = await fetchCompletion(prompt);
-    console.log(completion);
+    console.log(completion);// TODO: Dont use console messages
     setInitialIntentions(completion);
     const cleanedKeywords = completion.replace(/^\[|\[|\]|\].|\.|\,$/g, " ");
     const keywordArray = cleanedKeywords.split(", ");
@@ -50,7 +50,7 @@ function SelectIntentions() {
         keyword: keyword.trim(),
       })
     );
-    console.log(keywordSEOArray);
+    console.log(keywordSEOArray);// TODO: Dont use console messages
     setInitialIntentions(keywordSEOArray);
     setIsIntentionsGenerated(true);
   };

@@ -23,7 +23,7 @@ const openaiAPI = axios.create({
     const completion = choices[0].text.trim();
     return completion;
   } catch (error) {
-    console.error('Error al llamar a la API de OpenAI:', error);
+    console.error('Error al llamar a la API de OpenAI:', error);// TODO: Dont use console messages
     return null;
   }
 };

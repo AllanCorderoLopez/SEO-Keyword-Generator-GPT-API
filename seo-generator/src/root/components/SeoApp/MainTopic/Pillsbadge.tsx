@@ -22,7 +22,7 @@ function Pillsbadge() {
   const GetInitialSuggestions = async () => {
     const prompt = getInitialSuggestionsPromtp();
     const completion = await fetchCompletion(prompt);
-    console.log(completion);
+    console.log(completion);// TODO: Dont use console messages
     setInitialSuggestions(completion);
     const cleanedKeywords = completion.replace(/^\[|\[|\]|\].|\.|\,$/g, " ");
     const keywordArray = cleanedKeywords.split(", ");

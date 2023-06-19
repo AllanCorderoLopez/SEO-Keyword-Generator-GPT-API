@@ -10,10 +10,10 @@ export interface phrases{
   phrase: string;
 }
 const ShareButtonsComponent = (phrase:phrases) => {
-  const shareUrl = "\n¡Generado en SeoStudio!"; // URL a compartir
-  let textToShare = phrase.phrase; // Texto a compartir
+  const shareUrl = "\n¡Generado en SeoStudio!"; // URL a compartir // TODO: Clear the comments
+  let textToShare = phrase.phrase; // Texto a compartir // TODO: Clear the comments
 
-  const handleShareClick = (event: any, network: any) => {
+  const handleShareClick = (event: any, network: any) => {//Fix: Dont use any
     event.preventDefault();
 
     const shareText = `${textToShare} ${shareUrl}`;
